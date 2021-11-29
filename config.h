@@ -12,11 +12,10 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#dedede";
-static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray1, col_gray4, col_gray2 },
-	[SchemeSel]  = { col_gray1, col_gray3,  col_cyan  },
+	[SchemeSel]  = { col_gray1, col_gray3,  col_gray3  },
 	[SchemeStatus]  = { col_gray1, col_gray4,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
 	[SchemeTagsSel]  = { col_gray1, col_gray3,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
     [SchemeTagsNorm]  = { col_gray1, col_gray4,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
@@ -64,7 +63,7 @@ static const Rule rules[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray4, "-nf", col_gray1, "-sb", col_gray1, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
 static const char *amixerup[] = {"amixer", "-c", "0", "set", "Master", "5+", "unmute", NULL};
 static const char *amixerdown[] = {"amixer", "-c", "0", "set", "Master", "5-", "unmute", NULL};
