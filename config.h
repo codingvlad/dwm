@@ -6,8 +6,8 @@ static const unsigned int gappx     = 0;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrains Mono:style=medium:size=11" };
-static const char dmenufont[]       = "JetBrains Mono:style=medium:size=11";
+static const char *fonts[]          = { "JetBrains Mono:style=medium:size=12" };
+static const char dmenufont[]       = "JetBrains Mono:style=medium:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -69,8 +69,6 @@ static const char *termcmd[]  = { "urxvt", NULL };
 static const char *amixerup[] = {"amixer", "-c", "0", "set", "Master", "5+", "unmute", NULL};
 static const char *amixerdown[] = {"amixer", "-c", "0", "set", "Master", "5-", "unmute", NULL};
 static const char *amixermut[] = {"amixer", "sset", "Master", "Toggle", NULL};
-static const char *brightup[]	= { "xbacklight", "-inc", "10", NULL };
-static const char *brightdown[]	= { "xbacklight", "-dec", "10", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -126,8 +124,6 @@ static Key keys[] = {
 	{ 0,                       	    0x1008ff13, spawn,         {.v = amixerup } },
 	{ 0,                       	    0x1008ff11, spawn,         {.v = amixerdown } },
 	{ 0,                       	    0x1008ff12, spawn,         {.v = amixermut } },
-	{ 0,				            0x1008ff02, spawn,  	   {.v = brightup } },
-	{ 0,				            0x1008ff03, spawn,	       {.v = brightdown } },
 	{ MODKEY,                       XK_q,       killclient,    {0} },
     { MODKEY|ControlMask,           XK_q,       quit,          {0} },
 };
